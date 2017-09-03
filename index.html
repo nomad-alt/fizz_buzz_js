@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>FizzBuzz</title>
+    <script src="assets/js/fizzbuzz"></script>
+    <noscript>
+    <meta http-equiv="refresh" content="0; URL=http://example.com/noscript.html"/>
+    </noscript>
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/mystyle.css">
+  </head>
+  <body>
+    <div class="container">
+    <div class="text-center">
+    <div class="text-center text-2x"><span class="text-thin">CRAFT</span><span class="text-bold">ACADEMY</span></div>
+      <p class="small text-center">Learn coding in 12 weeks</p>
+    </div>
+    <div class="panel panel-default">
+      <h2 class="page-header text-center">Lets play FizzBuzz</h2>
+      <form class="form-inline text-center">
+      <input class="form-control" type="number" name="number" placeholder="Enter Number" min="0" value="0" required="required"/>
+      <input class="btn btn-default" value="Check" type="button"/>
+    </form>
+      <div class="output text-center"></div>
+      </div>
+    </div>
+
+    <div class="wrap">
+        <div class="top-bar">
+          <div class="top-bar-left">
+            <section>
+            <div class="title">FizzBuzz Number Checker</div>
+            </section>
+          </div>
+        </div>
+        <form>
+          <input type="text" id="number" placeholder="Enter number">
+          <input type="button" id="calculate" value="Push to Play">
+        </form>
+        <div class="display">
+            <span id="display_message"></span>
+        </div>
+      </div>
+
+        <script type="text/javascript">
+          $(document).ready(function () {
+            $("#number").focus()
+            $('#calculate').click(function () {
+              var input = parseFloat($('#number').val());
+              var result = fizzbuzz.fizzBuzz(input);
+              $('#display_message').html(result);
+          });
+            });
+    </script>
+  </body>
+</html>

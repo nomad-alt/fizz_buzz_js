@@ -1,29 +1,28 @@
-describe('Partial sample', function() {
+describe('fizzBuzz - index.html', function() {
   beforeEach(function() {
-    // We can load fixtures using this method:
-    //jasmine.getFixtures().clearCache();
-    //var f = jasmine.getFixtures();
-    //f.fixturesPath = 'base/spec/fixtures';
-    //f.load('sample_partial.html');
-    //$.holdReady(false);
-
-    // Or this:
     jasmine.getFixtures().fixturesPath = 'base/spec/fixtures';
     loadFixtures('sample_partial.html');
     $.holdReady(false);
+    $('#number').val(1);
+    $('#number').val(3);
+    $('#number').val(5);
+    $('#number').val(15);
+    $('#calculate').trigger('click');
   });
 
-  afterEach(function() {
-    // If you need to reset some values after each testing
-    // you can do it here. 
-  });
+  describe("display FizzBuzz", function() {
 
-  describe("displays text", function() {
-
-    it("when button is clicked", function() {
-      $('#text').val('Some random text...');
-      $('#click_me').trigger('click');
-      expect($('#display_message').text()).toBe('Some random text...');
+    it("displays 1 when button is clicked", function() {
+      expect($('#display_message').text()).toBe('1');
+    });
+    it("displays 'Fizz' when button is clicked", function() {
+      expect($('#display_message').text()).toBe('Fizz');
+    });
+    it("displays 'Buzz' when button is clicked", function() {
+      expect($('#display_message').text()).toBe('Buzz');
+    });
+    it("displays 'FizzBuzz' when button is clicked", function() {
+      expect($('#display_message').text()).toBe('FizzBuzz');
     });
   });
 });

@@ -1,24 +1,8 @@
-var fizzBuzz = function () {
+function fizzBuzz() {}
 
-    var getResult = function(number) {
-      if (isDivisibleByThree(number) && isDivisibleByFive(number))
-        return "FizzBuzz!";
-      if (isDivisibleByThree(number))
-        return "Fizz!";
-      if (isDivisibleByFive(number))
-          return "Buzz!";
-      return number.toString();
-    };
-
-    var isDivisibleByThree = function (number) {
-      return number % 3 == 0 && number != 0;
-    };
-
-    var isDivisibleByFive = function (number) {
-      return number % 5 == 0 && number != 0;
-    };
-
-    return {
-      getResult: getResult
-    };
-} ();
+fizzBuzz.prototype.try = function(i) {
+  if (i % 15 ===0) return "FizzBuzz"
+  if (i % 3 ===0) return "Fizz"
+  if (i % 5 ===0) return "Buzz"
+  return i
+}

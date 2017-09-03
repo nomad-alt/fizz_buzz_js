@@ -1,27 +1,21 @@
 describe("FizzBuzz", function() {
-
-  it("should return Fizz! if number is divisible by three", function() {
-    var result = fizzBuzz.getResult(3);
-    expect(result).toEqual('Fizz!');
+  beforeEach(function() {
+    fizzbuzz = new fizzBuzz;
   });
 
-  it("should return Buzz! if number is divisible by five", function() {
-    var result = fizzBuzz.getResult(5);
-    expect(result).toEqual('Buzz!');
+  it("returns Fizz if divisible by 3", function() {
+    expect(fizzbuzz.try(3)).toEqual('Fizz');
   });
 
-  it("should return FizzBuzz! if number is divisible by three and five", function() {
-    var result = fizzBuzz.getResult(15);
-    expect(result).toEqual('FizzBuzz!');
+  it("returns Buzz if divisible by 5", function() {
+    expect(fizzbuzz.try(5)).toEqual('Buzz');
   });
 
-  it("should return number if number is nondivisible by three and five", function() {
-    var result = fizzBuzz.getResult(7);
-    expect(result).toEqual('7');
+  it("returns FizzBuzz if divisible by 3 and 5", function() {
+    expect(fizzbuzz.try(15)).toEqual('FizzBuzz');
   });
 
-  it("should return '0' for zero", function() {
-    var result = fizzBuzz.getResult(0);
-    expect(result).toEqual('0');
+  it("returns number if nondivisible by 3 and 5", function() {
+    expect(fizzbuzz.try(1)).toEqual(1);
   });
 });
