@@ -1,4 +1,4 @@
-describe('fizzBuzz - index.html', function() {
+describe('FizzBuzz - index.html', function() {
   beforeEach(function() {
     jasmine.getFixtures().fixturesPath = 'base/spec/fixtures';
     loadFixtures('sample_partial.html');

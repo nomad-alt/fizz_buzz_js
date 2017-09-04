@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>FizzBuzz</title>
-    <script src="assets/js/fizzbuzz"></script>
+    <script src="assets/js/fizzbuzz.js"></script>
     <noscript>
     <meta http-equiv="refresh" content="0; URL=http://example.com/noscript.html"/>
     </noscript>
@@ -17,11 +17,14 @@
       <p class="small text-center">Learn coding in 12 weeks</p>
     </div>
       <h2 class="page-header text-center">Lets play FizzBuzz</h2>
-      <form class="form-inline text-center">
+      <form class="form-inline text-center"> </form>
 
     <div class="wrap">
         <div class="top-bar">
           <div class="top-bar-left">
+            <section>
+
+            </section>
           </div>
         </div>
         <form>
@@ -35,10 +38,10 @@
 
         <script type="text/javascript">
           $(document).ready(function () {
-            $("#number").focus()
-            $('#calculate').click(function () {
-              var input = parseFloat($('#number').val());
-              var result = fizzbuzz.fizzBuzz(input);
+            var fizzbuzz = new fizzBuzz;
+            $("#calculate").click(function () {
+              var input = parseInt($('#number').val());
+              var result = fizzbuzz.try(input);
               $('#display_message').html(result);
           });
             });
